@@ -13,6 +13,17 @@ exports.arraysAnswers = {
   },
 
   remove : function(arr, item) {
+    function recurse(arr, item){
+      if(_.indexOf(arr, item) !== -1){
+        recurse((arr.splice(_.indexOf(arr, item), 1), item))
+      }
+      else{
+        return arr;
+      }
+    }
+
+    return recurse(arr, item);
+
 
   },
 
