@@ -3,11 +3,13 @@ exports = (typeof window === 'undefined') ? global : window;
 exports.arraysAnswers = {
 
   indexOf : function(arr, item) {
-
+    return _.indexOf(arr, item);
   },
 
   sum : function(arr) {
-
+    return _.reduce(arr, function(prev, curr){
+      return prev + curr;
+    });
   },
 
   remove : function(arr, item) {
